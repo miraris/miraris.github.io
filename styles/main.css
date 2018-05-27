@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+html {
+    font: 1rem/2 Roboto;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+* {
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* :( */
+.social-links > ul > li > a {
+    color: #333;
+}
+
+@media (max-width: 500px) {
+    html,
+    body {
+        display: inherit !important;
+        padding: 1em;
+    }
+    main {
+        width: 100%;
+    }
+}
