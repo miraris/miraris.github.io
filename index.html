@@ -96,7 +96,10 @@
     walk() {
       this.position.x = map(noise(this.newoff.x), 0, 1, 0, width);
       this.position.y = map(noise(this.newoff.y), 0, 1, 0, height);
-      this.newoff.add(0.006, 0.006, 0);
+
+      // use standard phone viewport size to scale the movement
+      const ratio = Math.min(windowWidth / 412, windowHeight / 732);
+      this.newoff.add(0.01 * ratio, 0.01 * ratio, 0);
     }
   }
 
