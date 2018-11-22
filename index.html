@@ -86,7 +86,7 @@
       this.newoff = createVector(random(1000), random(1000));
 
       // use standard phone viewport size to scale the movement
-      this.ratio = orientation === 'landscape-primary'
+      this.ratio = orientation === 'portrait-primary'
         ? Math.min(windowWidth / 412, windowHeight / 732)
         : Math.min(windowWidth / 732, windowHeight / 412);
     }
