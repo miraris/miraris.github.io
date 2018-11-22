@@ -1,1 +1,123 @@
-<!DOCTYPE html><meta charset="utf-8"><title>Miraris - index</title><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="kinda miraris' portfolio, i do stuff"><meta name="image" content="https://cdn.discordapp.com/avatars/164046181352079361/1e3d0b370a2c1da6513a7000277b6532.png?size=1024"><meta itemprop="name" content="Miraris"><meta itemprop="description" content="kinda miraris' portfolio, i do stuff"><meta itemprop="image" content="https://cdn.discordapp.com/avatars/164046181352079361/1e3d0b370a2c1da6513a7000277b6532.png?size=1024"><meta name="og:title" content="Miraris"><meta name="og:description" content="kinda miraris' portfolio, i do stuff"><meta name="og:image" content="https://cdn.discordapp.com/avatars/164046181352079361/1e3d0b370a2c1da6513a7000277b6532.png?size=1024"><meta name="og:url" content="htts://miraris.me"><meta name="og:site_name" content="Miraris"><meta name="og:locale" content="en_US"><meta name="og:type" content="website"><style>html,ul{margin:0;display:flex}.social-links>ul>li>a,html{color:#333}html{font:1rem/2 Roboto;height:100%;width:100%;justify-content:center;align-items:center;flex-flow:column nowrap}*{box-sizing:border-box}ul{list-style-type:none;padding:0;justify-content:space-evenly}@media (max-width:500px){body,html{display:inherit!important;padding:1em}main{width:100%}}</style><script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script><main><h1>Miraris</h1><p>summary: php, js, c, python, sysadmin and other stuff</p><p><strong>presently:</strong></p>— backend dev @ <a href="https://nekoani.me">nekoani.me</a><br>— working on personal projects<br><br><div class="social-links"><ul><li><a target="_blank" href="https://github.com/miraris"><i class="fab fa-github fa-lg"></i></a></li><li><a target="_blank" href="https://keybase.io/miraris"><i class="fab fa-keybase fa-lg"></i></a></li><li><a target="_blank" href="https://twitter.com/_miraris"><i class="fab fa-twitter fa-lg"></i></a></li><li><a target="_blank" href="discord.html"><i class="fab fa-discord fa-lg" title="Miraris#3057"></i></a></li><li class="last"><a href="mailto:miraris@autistici.org"><i class="fas fa-envelope fa-lg"></i></a></li></ul></div></main><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script><script>WebFont.load({google:{families:["Roboto"]}})</script>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Miraris</title>
+<meta name="author" content="Miraris">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+<style>
+  html, body {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+  }
+  h1, h2 {
+    position: relative;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 12px 0;
+    left: 4px;
+  }
+  h2 {
+    color: #999;
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: .12em;
+    margin-bottom: 30px;
+    left: 3px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 2em;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  a {
+    color: #999;
+    text-decoration: none;
+    transition: color .3s ease;
+  }
+  a:hover {
+    color: #d81b60;
+  }
+  .p5Canvas {
+    display: block;
+  }
+  .wrapper {
+    position: absolute;
+    left: 0;
+    width: 320px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -160px;
+    margin-top: -160px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+</style>
+<div class="wrapper">
+  <h1>Miraris</h1>
+  <h2>Design, Code &amp; Things in Between&nbsp;</h2>
+  <p><a href="https://github.com/miraris" target="_blank">Github</a></p>
+  <p><a href="https://keybase.io/miraris" target="_blank">Keybase</a></p>
+  <p><a href="xmpp:miraris@lightwitch.org?message">XMPP</a></p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+<script>
+  let walker;
+  let canvas;
+
+  class Walker {
+    constructor() {
+      this.position = createVector(width / 2, height / 2);
+      this.newoff = createVector(random(1000), random(1000));
+    }
+
+    display() {
+      const h = Math.round((this.position.x / windowWidth) * 360);
+      const s = Math.round(100 - (this.position.y / windowHeight) * 100);
+      const l = 100;
+
+      colorMode(HSB);
+      fill(h, s, l, 0.3);
+      noStroke();
+      ellipse(this.position.x, this.position.y, 5, 5);
+    }
+
+    walk() {
+      this.position.x = map(noise(this.newoff.x), 0, 1, 0, width);
+      this.position.y = map(noise(this.newoff.y), 0, 1, 0, height);
+      this.newoff.add(0.006, 0.006, 0);
+    }
+  }
+
+  function setup() {
+    canvas = createCanvas(windowWidth, windowHeight);
+    walker = new Walker();
+    background(253);
+  }
+
+  function draw() {
+    walker.walk();
+    walker.display();
+  }
+
+  function mousePressed() {
+    clear();
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+
+  window.setInterval(h => clear(), 60000);
+</script>

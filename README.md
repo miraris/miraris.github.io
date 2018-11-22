@@ -1,2 +1,2 @@
-# miraris.me
-My personal website.
+# miraris.moe
+me
