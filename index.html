@@ -75,11 +75,17 @@
 <script>
   let walker;
   let canvas;
+  const orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
 
   class Walker {
     constructor() {
       this.position = createVector(width / 2, height / 2);
       this.newoff = createVector(random(1000), random(1000));
+
+      // use standard phone viewport size to scale the movement
+      this.ratio = orientation === 'landscape-primary'
+        ? Math.min(windowWidth / 412, windowHeight / 732)
+        : Math.min(windowWidth / 732, windowHeight / 412);
     }
 
     display() {
@@ -97,9 +103,7 @@
       this.position.x = map(noise(this.newoff.x), 0, 1, 0, width);
       this.position.y = map(noise(this.newoff.y), 0, 1, 0, height);
 
-      // use standard phone viewport size to scale the movement
-      const ratio = Math.min(windowWidth / 412, windowHeight / 732);
-      this.newoff.add(0.01 * ratio, 0.01 * ratio, 0);
+      this.newoff.add(0.008 * this.ratio, 0.008 * this.ratio, 0);
     }
   }
 
