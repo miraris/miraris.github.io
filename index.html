@@ -1,83 +1,37 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<!-- <title>Miraris</title> -->
-<meta name="author" content="Miraris">
-<meta property="og:title" content="Miraris">
-<meta property="og:url" content="miraris.moe">
-<meta property="og:type" content="website">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
-<style>
-  html, body {
-    padding: 0;
-    margin: 0;
-  }
-  body {
-    font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Miraris</title>
+    <meta name="author" content="Miraris">
+    <meta property="og:title" content="Miraris">
+    <meta property="og:url" content="miraris.moe">
+    <meta property="og:type" content="website">
 
-    display: flex;
+    <!-- icons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-    /* This centers our sketch horizontally. */
-    justify-content: center;
-  }
-  h1, h2 {
-    position: relative;
-  }
-  h1 {
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin: 12px 0;
-    left: 4px;
-  }
-  h2 {
-    color: #999;
-    font-weight: normal;
-    font-size: 16px;
-    letter-spacing: .12em;
-    margin-bottom: 30px;
-    left: 3px;
-  }
-  p {
-    font-size: 14px;
-    line-height: 2em;
-    margin: 0;
-    letter-spacing: 2px;
-  }
-  a {
-    color: #999;
-    text-decoration: none;
-    transition: color .3s ease;
-  }
-  a:hover {
-    color: #d81b60;
-  }
-  #mainCanvas {
-    display: block;
-  }
-  .wrapper {
-    position: absolute;
-    left: 0;
-    width: 320px;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    margin-left: -160px;
-    margin-top: -160px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-</style>
-<canvas id="mainCanvas"></canvas>
-<div class="wrapper">
-  <h1>Miraris</h1>
-  <h2>aspiring dev and a full-fledged weeb&nbsp;</h2>
-  <p><a href="https://github.com/miraris" target="_blank">Github</a></p>
-  <p><a href="https://keybase.io/miraris" target="_blank">Keybase</a></p>
-  <p><a href="xmpp:miraris@lightwitch.org?message">XMPP</a></p>
-</div>
-
-<script src="main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="main.min.css" rel="stylesheet">
+    <script src="main.min.js" defer></script>
+  </head>
+  <body>
+    <canvas id="mainCanvas"></canvas>
+    <div class="wrapper">
+      <div class="info">
+        <h1>Miraris</h1>
+        <h2>aspiring dev and a full-fledged weeb&nbsp;</h2>
+        <p><a href="https://github.com/miraris" target="_blank">Github</a></p>
+        <p><a href="https://keybase.io/miraris" target="_blank">Keybase</a></p>
+        <p><a href="xmpp:miraris@lightwitch.org?message">XMPP</a></p>
+      </div>
+    </div>
+  </body>
+</html>
