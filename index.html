@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Miraris</title>
+<!-- <title>Miraris</title> -->
 <meta name="author" content="Miraris">
 <meta property="og:title" content="Miraris">
 <meta property="og:url" content="miraris.moe">
@@ -15,6 +15,11 @@
   body {
     font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
     color: #333;
+
+    display: flex;
+
+    /* This centers our sketch horizontally. */
+    justify-content: center;
   }
   h1, h2 {
     position: relative;
@@ -49,7 +54,7 @@
   a:hover {
     color: #d81b60;
   }
-  .p5Canvas {
+  #mainCanvas {
     display: block;
   }
   .wrapper {
@@ -66,6 +71,7 @@
     user-select: none;
   }
 </style>
+<canvas id="mainCanvas"></canvas>
 <div class="wrapper">
   <h1>Miraris</h1>
   <h2>aspiring dev and a full-fledged weeb&nbsp;</h2>
@@ -73,61 +79,5 @@
   <p><a href="https://keybase.io/miraris" target="_blank">Keybase</a></p>
   <p><a href="xmpp:miraris@lightwitch.org?message">XMPP</a></p>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-<script>
-  let walker;
-  let canvas;
-  const orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
 
-  class Walker {
-    constructor() {
-      this.position = createVector(width / 2, height / 2);
-      this.newoff = createVector(random(1000), random(1000));
-
-      // use standard phone viewport size to scale the movement
-      this.ratio = orientation === 'portrait-primary'
-        ? Math.min(windowWidth / 412, windowHeight / 732)
-        : Math.min(windowWidth / 732, windowHeight / 412);
-    }
-
-    display() {
-      const h = Math.round((this.position.x / windowWidth) * 360);
-      const s = Math.round(100 - (this.position.y / windowHeight) * 100);
-      const l = 100;
-
-      colorMode(HSB);
-      fill(h, s, l, 0.3);
-      noStroke();
-      ellipse(this.position.x, this.position.y, 5, 5);
-    }
-
-    walk() {
-      this.position.x = map(noise(this.newoff.x), 0, 1, 0, width);
-      this.position.y = map(noise(this.newoff.y), 0, 1, 0, height);
-
-      this.newoff.add(0.008 * this.ratio, 0.008 * this.ratio, 0);
-    }
-  }
-
-  function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
-    walker = new Walker();
-    background(253);
-  }
-
-  function draw() {
-    walker.walk();
-    walker.display();
-  }
-
-  function mousePressed() {
-    clear();
-  }
-
-  function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-  }
-
-  window.setInterval(h => clear(), 60000);
-</script>
+<script src="main.js" defer></script>
