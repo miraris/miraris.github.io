@@ -1,16 +1,32 @@
 const canvas = document.getElementById('mainCanvas');
 const ctx = canvas.getContext('2d');
 
-function chunk(arr, size) {
+const chunk = (arr, size) => {
   const temparray = [];
 
   for (let i = 0, j = arr.length; i < j; i += size) {
     temparray.push(arr.slice(i, i + size));
   }
   return temparray;
-}
+};
 
-const API_URL = 'https://api.miraris.moe';
+const findMax = (arr) => {
+  let mX = arr[0][0];
+  let mY = arr[0][1];
+
+  const len = arr.length;
+  for (let i = 1; i < len; i++) {
+    const v = arr[i][0];
+    const w = arr[i][1];
+
+    mX = v > mX ? v : mX;
+    mY = w > mY ? w : mY;
+  }
+
+  return [mX, mY];
+};
+
+const API_URL = 'http://api.lineart.localhost';
 const getImage = () => fetch(API_URL).then(res => res.json());
 
 class Sketcher {
@@ -29,19 +45,12 @@ class Sketcher {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
-  setLightness(x) {
-    this.lightness = x;
-  }
-
-  getLightness() {
-    return this.lightness;
-  }
-
   resize() {
-    const x = this.data[0];
+    const mins = findMax(this.data);
+    const offLeft = this.size.width / 2 - mins[0] / 2;
+    const offTop = this.size.height / 2 - mins[1] / 2;
 
-    const offLeft = this.size.width / 2 - (Math.max(...x) - Math.min(...x)) / 2;
-    return chunk(this.data.map(arr => [arr[0] + offLeft, arr[1]]), this.data.length / 500);
+    return chunk(this.data.map(arr => [arr[0] + offLeft, arr[1] + offTop]), this.data.length / 500);
   }
 
   setSize(size) {
