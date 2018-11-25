@@ -7,7 +7,7 @@ html {
   display: block;
 }
 body {
-  font-family: Quicksand, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
   color: #fff;
 }
 h1,
@@ -20,42 +20,46 @@ h1 {
   letter-spacing: 4px;
   text-transform: uppercase;
   margin: 12px 0;
-  left: 4px;
 }
 h2 {
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.12em;
   margin-bottom: 30px;
-  left: 3px;
 }
-p {
+a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
   font-size: 14px;
   line-height: 2em;
   letter-spacing: 2px;
   display: inline-block;
   margin: 0 16px;
 }
-a {
-  color: #ddd;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #ff80ab;
-}
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
   top: 0;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   text-align: center;
+  align-items: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+.info {
+  background: #fff;
+  opacity: .8;
+  width: fit-content;
+  padding: 48px;
+  color: #666 !important;
+  -webkit-box-shadow: 4px 4px 48px -13px rgba(0,0,0,0.23);
+  -moz-box-shadow: 4px 4px 48px -13px rgba(0,0,0,0.23);
+  box-shadow: 4px 4px 48px -13px rgba(0,0,0,0.23);
+  border-radius: 8px;
 }
