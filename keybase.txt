@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/miraris
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://miraris.moe
+  * I am miraris (https://keybase.io/miraris) on keybase.
+  * I have a public key ASDn44K3fzvZp2Gtf6PrNv_cmTqLBzUiuH7dx_9fSL6M4Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c6529e1f025f4c36368d6c72a8f9752267bf156e93937d4e33b750ff618fddd10a",
+      "host": "keybase.io",
+      "kid": "0120e7e382b77f3bd9a761ad7fa3eb36ffdc993a8b073522b87eddc7ff5f48be8ce00a",
+      "uid": "c317910ccb0bca89be74d97d275e0719",
+      "username": "miraris"
+    },
+    "merkle_root": {
+      "ctime": 1543785322,
+      "hash": "ae545465f6de3bdd1b7e10cfa52b2b7dbf0e83ba4838e035abcb6ae35508744766c95c3210a40fb06bc81fbfccf95d50cb7f43005b9287cd7e1717fcd251b312",
+      "hash_meta": "35db6d39718eb85bc029675c4f651d46c7065304389524bbbbfc990ba965e93f",
+      "seqno": 4040758
+    },
+    "service": {
+      "entropy": "HyXZ9zp1UZzgPJjV3/aejMkE",
+      "hostname": "miraris.moe",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.10.1"
+  },
+  "ctime": 1543785398,
+  "expire_in": 504576000,
+  "prev": "ee0df24e4b1dd667a1329fd55a70e182a7d9171b501ac58c0e54395e3f2bb70f",
+  "seqno": 43,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg5+OCt3872adhrX+j6zb/3Jk6iwc1Irh+3cf/X0i+jOAKp3BheWxvYWTESpcCK8Qg7g3yTksd1mehMp/VWnDhgqfZFxtQGsWMDlQ5Xj8rtw/EIM/VRZf+jgjU2VPYuU2Wj6GiOkyHpcuxap6zwidjYInsAgHCo3NpZ8RAbfgTGh8kB2Bk5a5Thh5NHdCtS5jC/Le2SP3mcUNEeg1h8/Unsf+SN3ZZgDA8XL1IVWR51BVX0MiS7LBa105eBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMuTa1tZ2HJl3jg32eKWUkR+r5A/AnZxshGzhCi6Ysw6o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/miraris
+
+==================================================================
